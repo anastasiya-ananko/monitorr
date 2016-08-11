@@ -29,8 +29,8 @@ for x in range(1,10):
 # Где запись в файл????
 
 print(genoutputs(l))
-#mtext = genoutputs()
+mtext = genoutputs(l)
 
-#f = open('o.html', 'w', encoding='utf8')
-#f.write(mtext)
-#f.close()
+f = open('o.html', 'w', encoding='utf8')
+f.write(mtext)
+f.close()
