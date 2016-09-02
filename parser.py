@@ -26,7 +26,6 @@ for x in range(1,10):
 #Выводит [Decode error - output not utf-8] Это ошибка сублайма.
 #Решение тут https://toster.ru/q/158563
 
-# Где запись в файл????
 
 print(genoutputs(l))
 mtext = genoutputs(l)
