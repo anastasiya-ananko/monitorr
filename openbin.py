@@ -1,14 +1,30 @@
 import os
+import msvcrt
 
-path = 'Route1.vld'
-size = os.path.getsize(path)
+path = 'demo data/Route1.vld'
+# size = os.path.getsize(path)
+size = 8000
+
 print(size)
 
-f = open('Route1.vld', 'rb+')
-n = 4096
+f = open(path, 'rb+')
 
-while n < size:
-	a = f.read(6)
-	print(a)
-	f.seek(n)
-	n = n + 4096
+PACKET_SIZE = 4096;
+offset = 0
+
+print("start")
+
+while offset < size:
+	a = f.read(8)
+	row = "{0:02x} {1:02x} {2:02x} {3:02x} | {4:02x} {5:02x} {6:02x} {7:02x}".format(*a)
+
+	# for x in a:
+	# 	row = row + ' ' + format(x, '02x')
+
+	print(row.upper())
+	f.seek(offset)
+	offset = offset + PACKET_SIZE
+
+print("end")
+
+msvcrt.getch()
